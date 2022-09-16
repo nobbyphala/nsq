@@ -3,7 +3,7 @@ package stringy_test
 import (
 	"testing"
 
-	"github.com/nsqio/nsq/internal/stringy"
+	"github.com/nobbyphala/nsq/internal/stringy"
 )
 
 func BenchmarkUniq(b *testing.B) {

@@ -7,7 +7,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/nsqio/nsq/internal/lg"
+	"github.com/nobbyphala/nsq/internal/lg"
 )
 
 type TCPHandler interface {

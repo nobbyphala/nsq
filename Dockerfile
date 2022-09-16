@@ -2,9 +2,9 @@ FROM golang:alpine AS build
 
 RUN apk update && apk add make gcc musl-dev
 
-RUN mkdir -p /go/src/github.com/nsqio/nsq
-COPY    .    /go/src/github.com/nsqio/nsq
-WORKDIR      /go/src/github.com/nsqio/nsq
+RUN mkdir -p /go/src/github.com/nobbyphala/nsq
+COPY    .    /go/src/github.com/nobbyphala/nsq
+WORKDIR      /go/src/github.com/nobbyphala/nsq
 
 RUN ./test.sh
 RUN CGO_ENABLED=0 make PREFIX=/opt/nsq BLDFLAGS='-ldflags="-s -w"' install

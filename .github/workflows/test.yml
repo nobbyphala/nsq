@@ -24,7 +24,7 @@ jobs:
     env:
       GOPATH: "${{github.workspace}}/go"
       GOARCH: "${{matrix.goarch}}"
-      SRCDIR: "go/src/github.com/nsqio/nsq"
+      SRCDIR: "go/src/github.com/nobbyphala/nsq"
 
     steps:
       - uses: actions/checkout@v2
@@ -47,7 +47,7 @@ jobs:
     container: "golang:1.16-bullseye"
     env:
       GOPATH: "${{github.workspace}}/go"
-      SRCDIR: "go/src/github.com/nsqio/nsq"
+      SRCDIR: "go/src/github.com/nobbyphala/nsq"
 
     steps:
       - uses: actions/checkout@v2

@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/nsqio/nsq/internal/lg"
+	"github.com/nobbyphala/nsq/internal/lg"
 )
 
 type config map[string]interface{}

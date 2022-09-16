@@ -22,10 +22,10 @@ import (
 
 	"github.com/bitly/go-hostpool"
 	"github.com/bitly/timer_metrics"
+	"github.com/nobbyphala/nsq/internal/app"
+	"github.com/nobbyphala/nsq/internal/http_api"
+	"github.com/nobbyphala/nsq/internal/version"
 	"github.com/nsqio/go-nsq"
-	"github.com/nsqio/nsq/internal/app"
-	"github.com/nsqio/nsq/internal/http_api"
-	"github.com/nsqio/nsq/internal/version"
 )
 
 const (

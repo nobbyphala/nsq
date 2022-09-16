@@ -92,11 +92,11 @@ def _bootstrap(addr):
             'sudo -S apt-get update',
             'sudo -S apt-get -y install git mercurial',
             'mkdir -p go/src/github.com/nsqio',
-            'cd go/src/github.com/nsqio && git clone https://github.com/nsqio/nsq',
-            'cd go/src/github.com/nsqio/nsq && git checkout %s' % commit,
-            'cd go/src/github.com/nsqio/nsq/apps/nsqd && GO111MODULE=on /usr/local/go/bin/go build',
-            'cd go/src/github.com/nsqio/nsq/bench/bench_writer && GO111MODULE=on /usr/local/go/bin/go build',
-            'cd go/src/github.com/nsqio/nsq/bench/bench_reader && GO111MODULE=on /usr/local/go/bin/go build',
+            'cd go/src/github.com/nsqio && git clone https://github.com/nobbyphala/nsq',
+            'cd go/src/github.com/nobbyphala/nsq && git checkout %s' % commit,
+            'cd go/src/github.com/nobbyphala/nsq/apps/nsqd && GO111MODULE=on /usr/local/go/bin/go build',
+            'cd go/src/github.com/nobbyphala/nsq/bench/bench_writer && GO111MODULE=on /usr/local/go/bin/go build',
+            'cd go/src/github.com/nobbyphala/nsq/bench/bench_reader && GO111MODULE=on /usr/local/go/bin/go build',
             'sudo -S mkdir -p /mnt/nsq',
             'sudo -S chmod 777 /mnt/nsq']:
         ssh_cmd(ssh_client, cmd, timeout=10)
@@ -154,7 +154,7 @@ def run():
             for cmd in [
                     'sudo -S pkill -f nsqd',
                     'sudo -S rm -f /mnt/nsq/*.dat',
-                    'GOMAXPROCS=32 ./go/src/github.com/nsqio/nsq/apps/nsqd/nsqd \
+                    'GOMAXPROCS=32 ./go/src/github.com/nobbyphala/nsq/apps/nsqd/nsqd \
                         --data-path=/mnt/nsq \
                         --mem-queue-size=10000000 \
                         --max-rdy-count=%s' % (tornado.options.options.rdy)]:
@@ -181,7 +181,7 @@ def run():
                 ssh_client = ssh_connect_with_retries(instance.public_dns_name)
                 for cmd in [
                         'GOMAXPROCS=2 \
-                            ./go/src/github.com/nsqio/nsq/bench/bench_writer/bench_writer \
+                            ./go/src/github.com/nobbyphala/nsq/bench/bench_writer/bench_writer \
                             --topic=%s --nsqd-tcp-address=%s:4150 --deadline=\'%s\' --size=%d' % (
                             topic, nsqd_tcp_addr, deadline.strftime('%Y-%m-%d %H:%M:%S'),
                             tornado.options.options.msg_size)]:
@@ -202,7 +202,7 @@ def run():
                     ssh_client = ssh_connect_with_retries(instance.public_dns_name)
                     for cmd in [
                             'GOMAXPROCS=8 \
-                                ./go/src/github.com/nsqio/nsq/bench/bench_reader/bench_reader \
+                                ./go/src/github.com/nobbyphala/nsq/bench/bench_reader/bench_reader \
                                 --topic=%s --nsqd-tcp-address=%s:4150 --deadline=\'%s\' --size=%d \
                                 --rdy=%d' % (
                                 topic, nsqd_tcp_addr, deadline.strftime('%Y-%m-%d %H:%M:%S'),

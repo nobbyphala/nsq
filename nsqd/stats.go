@@ -5,7 +5,7 @@ import (
 	"sort"
 	"sync/atomic"
 
-	"github.com/nsqio/nsq/internal/quantile"
+	"github.com/nobbyphala/nsq/internal/quantile"
 )
 
 type Stats struct {

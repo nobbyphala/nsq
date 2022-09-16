@@ -4,9 +4,9 @@ import (
 	"testing"
 
 	"github.com/mreiferson/go-options"
-	"github.com/nsqio/nsq/internal/lg"
-	"github.com/nsqio/nsq/internal/test"
-	"github.com/nsqio/nsq/nsqlookupd"
+	"github.com/nobbyphala/nsq/internal/lg"
+	"github.com/nobbyphala/nsq/internal/test"
+	"github.com/nobbyphala/nsq/nsqlookupd"
 )
 
 func TestConfigFlagParsing(t *testing.T) {

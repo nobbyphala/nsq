@@ -17,11 +17,11 @@ import (
 
 	"strings"
 
+	"github.com/nobbyphala/nsq/internal/http_api"
+	"github.com/nobbyphala/nsq/internal/test"
+	"github.com/nobbyphala/nsq/internal/version"
+	"github.com/nobbyphala/nsq/nsqlookupd"
 	"github.com/nsqio/go-nsq"
-	"github.com/nsqio/nsq/internal/http_api"
-	"github.com/nsqio/nsq/internal/test"
-	"github.com/nsqio/nsq/internal/version"
-	"github.com/nsqio/nsq/nsqlookupd"
 )
 
 type ErrMessage struct {

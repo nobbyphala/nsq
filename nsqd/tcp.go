@@ -5,7 +5,7 @@ import (
 	"net"
 	"sync"
 
-	"github.com/nsqio/nsq/internal/protocol"
+	"github.com/nobbyphala/nsq/internal/protocol"
 )
 
 const (

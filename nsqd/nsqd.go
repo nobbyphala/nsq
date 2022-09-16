@@ -18,13 +18,13 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/nsqio/nsq/internal/clusterinfo"
-	"github.com/nsqio/nsq/internal/dirlock"
-	"github.com/nsqio/nsq/internal/http_api"
-	"github.com/nsqio/nsq/internal/protocol"
-	"github.com/nsqio/nsq/internal/statsd"
-	"github.com/nsqio/nsq/internal/util"
-	"github.com/nsqio/nsq/internal/version"
+	"github.com/nobbyphala/nsq/internal/clusterinfo"
+	"github.com/nobbyphala/nsq/internal/dirlock"
+	"github.com/nobbyphala/nsq/internal/http_api"
+	"github.com/nobbyphala/nsq/internal/protocol"
+	"github.com/nobbyphala/nsq/internal/statsd"
+	"github.com/nobbyphala/nsq/internal/util"
+	"github.com/nobbyphala/nsq/internal/version"
 )
 
 const (
@@ -598,8 +598,7 @@ func (n *NSQD) channels() []*Channel {
 
 // resizePool adjusts the size of the pool of queueScanWorker goroutines
 //
-// 	1 <= pool <= min(num * 0.25, QueueScanWorkerPoolMax)
-//
+//	1 <= pool <= min(num * 0.25, QueueScanWorkerPoolMax)
 func (n *NSQD) resizePool(num int, workCh chan *Channel, responseCh chan bool, closeCh chan int) {
 	idealPoolSize := int(float64(num) * 0.25)
 	if idealPoolSize < 1 {

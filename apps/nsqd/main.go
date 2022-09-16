@@ -13,9 +13,9 @@ import (
 	"github.com/BurntSushi/toml"
 	"github.com/judwhite/go-svc"
 	"github.com/mreiferson/go-options"
-	"github.com/nsqio/nsq/internal/lg"
-	"github.com/nsqio/nsq/internal/version"
-	"github.com/nsqio/nsq/nsqd"
+	"github.com/nobbyphala/nsq/internal/lg"
+	"github.com/nobbyphala/nsq/internal/version"
+	"github.com/nobbyphala/nsq/nsqd"
 )
 
 type program struct {

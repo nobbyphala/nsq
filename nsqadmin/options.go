@@ -3,7 +3,7 @@ package nsqadmin
 import (
 	"time"
 
-	"github.com/nsqio/nsq/internal/lg"
+	"github.com/nobbyphala/nsq/internal/lg"
 )
 
 type Options struct {

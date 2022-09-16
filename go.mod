@@ -1,4 +1,4 @@
-module github.com/nsqio/nsq
+module github.com/nobbyphala/nsq
 
 go 1.16
 

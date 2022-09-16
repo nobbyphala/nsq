@@ -19,7 +19,7 @@ AutoReqProv: no
 
 %description 
 NSQ - A realtime distributed messaging platform
-https://github.com/nsqio/nsq
+https://github.com/nobbyphala/nsq
 
 %prep
 mkdir -p $RPM_BUILD_DIR/%{name}-%{version}-%{release}

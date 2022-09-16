@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/nsqio/nsq/internal/http_api"
+	"github.com/nobbyphala/nsq/internal/http_api"
 )
 
 type Authorization struct {

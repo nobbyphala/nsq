@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/nsqio/nsq/internal/statsd"
-	"github.com/nsqio/nsq/internal/writers"
+	"github.com/nobbyphala/nsq/internal/statsd"
+	"github.com/nobbyphala/nsq/internal/writers"
 )
 
 type Uint64Slice []uint64
